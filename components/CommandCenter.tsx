@@ -64,35 +64,37 @@ export default function AboutMeSection() {
 
     switch (activeModule) {
       case 'WHO_I_AM':
+        const whoIAmContent = module.content as { name: string; role: string; location: string; status: string; bio: string; outside_code: string }
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-emerald-400">name:</span> {module.content.name}
+                <span className="text-emerald-400">name:</span> {whoIAmContent.name}
               </div>
               <div>
-                <span className="text-emerald-400">role:</span> {module.content.role}
+                <span className="text-emerald-400">role:</span> {whoIAmContent.role}
               </div>
               <div>
-                <span className="text-emerald-400">location:</span> {module.content.location}
+                <span className="text-emerald-400">location:</span> {whoIAmContent.location}
               </div>
               <div>
-                <span className="text-emerald-400">status:</span> {module.content.status}
+                <span className="text-emerald-400">status:</span> {whoIAmContent.status}
               </div>
             </div>
             <div className="mt-4">
               <span className="text-emerald-400">bio:</span>
-              <p className="mt-2 text-gray-300">{module.content.bio}</p>
+              <p className="mt-2 text-gray-300">{whoIAmContent.bio}</p>
             </div>
             <div className="mt-2 text-gray-500 text-sm">
-              {module.content.outside_code}
+              {whoIAmContent.outside_code}
             </div>
           </div>
         )
       case 'HOW_I_THINK':
+        const howIThinkContent = module.content as { principles: string[] }
         return (
           <div className="space-y-3">
-            {module.content.principles.map((principle, index) => (
+            {howIThinkContent.principles.map((principle, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <span className="text-violet-400">▸</span>
                 <span>{principle}</span>
@@ -101,9 +103,10 @@ export default function AboutMeSection() {
           </div>
         )
       case 'HOW_I_WORK':
+        const howIWorkContent = module.content as { process: string[] }
         return (
           <div className="space-y-3">
-            {module.content.process.map((step, index) => (
+            {howIWorkContent.process.map((step, index) => (
               <div key={index} className="flex flex-col space-y-1">
                 <div className="flex items-center space-x-3">
                   <span className="text-blue-400">{String(index + 1).padStart(2, '0')}.</span>
@@ -115,12 +118,13 @@ export default function AboutMeSection() {
           </div>
         )
       case 'WHAT_I_USE':
+        const whatIUseContent = module.content as { frontend: string[]; backend: string[]; tools: string[] }
         return (
           <div className="space-y-4">
             <div>
               <span className="text-emerald-400">Interfaces:</span>
               <div className="mt-2 flex flex-wrap gap-2">
-                {module.content.frontend.map((tech, index) => (
+                {whatIUseContent.frontend.map((tech, index) => (
                   <span key={index} className="px-2 py-1 bg-emerald-500/20 text-emerald-300 rounded text-sm">
                     {tech}
                   </span>
@@ -130,7 +134,7 @@ export default function AboutMeSection() {
             <div>
               <span className="text-emerald-400">Systems:</span>
               <div className="mt-2 flex flex-wrap gap-2">
-                {module.content.backend.map((tech, index) => (
+                {whatIUseContent.backend.map((tech, index) => (
                   <span key={index} className="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-sm">
                     {tech}
                   </span>
@@ -140,7 +144,7 @@ export default function AboutMeSection() {
             <div>
               <span className="text-emerald-400">Environment:</span>
               <div className="mt-2 flex flex-wrap gap-2">
-                {module.content.tools.map((tool, index) => (
+                {whatIUseContent.tools.map((tool, index) => (
                   <span key={index} className="px-2 py-1 bg-violet-500/20 text-violet-300 rounded text-sm">
                     {tool}
                   </span>
@@ -150,9 +154,10 @@ export default function AboutMeSection() {
           </div>
         )
       case 'WHERE_IM_GOING':
+        const whereImGoingContent = module.content as { goals: string[] }
         return (
           <div className="space-y-3">
-            {module.content.goals.map((goal, index) => (
+            {whereImGoingContent.goals.map((goal, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <span className="text-emerald-400">→</span>
                 <span>{goal}</span>
