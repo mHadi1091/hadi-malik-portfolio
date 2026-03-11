@@ -174,7 +174,7 @@ export default function AboutMeSection() {
   }
 
   return (
-    <section className="py-20 bg-black/50 relative">
+    <section className="py-20 ">
       <div className="max-w-6xl mx-auto px-6">
         {/* Intro */}
         {/* <div className="mb-10 max-w-3xl">

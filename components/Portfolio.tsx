@@ -38,26 +38,7 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Custom Cursor Effect */}
-      <div 
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300"
-        style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(139, 92, 246, 0.15), transparent 80%)`
-        }}
-      />
-
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          maskImage: 'radial-gradient(ellipse 80% 50% at 50% 50%, black 30%, transparent 100%)'
-        }} />
-      </div>
+    <div className="min-h-screen text-white overflow-x-hidden">
 
       <Navigation activeSection={activeSection} />
       <Hero />
@@ -74,7 +55,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 font-mono">
-              © 2024 Hadi Malik. Built with React, Next.js, Tailwind CSS, and lots of ☕
+              © 2024 Hadi Malik. Built with React, Next.js, Tailwind CSS, and lots of coffee.
             </p>
             <div className="flex items-center gap-4">
               <a href="mailto:mhadimalik2004@gmail.com" 
