@@ -4,7 +4,8 @@ import GridScan from '@/components/GridScan'
 
 export const metadata: Metadata = {
   title: 'Hadi Malik - Frontend Developer',
-  description: 'Full-stack developer crafting exceptional digital experiences with modern web technologies',
+  description:
+    'Full-stack developer crafting exceptional digital experiences with modern web technologies',
   icons: {
     icon: '/favicon.svg',
   },
@@ -18,7 +19,18 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ background: '#000000' }}>
       <body style={{ margin: 0, padding: 0, background: 'transparent' }}>
-        <div style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', zIndex: 0, pointerEvents: 'none' }}>
+        
+        {/* Background Grid Scan Effect */}
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            width: '100vw',
+            height: '100vh',
+            zIndex: 0,
+            pointerEvents: 'none',
+          }}
+        >
           <GridScan
             sensitivity={0}
             lineThickness={1}
@@ -35,11 +47,16 @@ export default function RootLayout({
             scanDuration={2}
             scanDelay={2}
             scanOnClick={false}
+            className=""
+            style={{ width: '100%', height: '100%' }}
           />
         </div>
+
+        {/* Main Content */}
         <div style={{ position: 'relative', zIndex: 1 }}>
           {children}
         </div>
+
       </body>
     </html>
   )
